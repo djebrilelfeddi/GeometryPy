@@ -2,13 +2,31 @@
 <div align="center">
   <br />
   <p>
-    <a><img src="https://i.ibb.co/2shXHs5/logo-GEOMETRY-pu.png" width="546" alt="GeometryPy" /></a>
+    <a><img src="https://i.ibb.co/2shXHs5/logo-GEOMETRY-pu.png" width="700" alt="GeometryPy" /></a>
   </p>
   <br />
-  <p>
+
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Geometry Dash](https://img.shields.io/badge/Geometry_Dash-2.1-FFCC00?style=for-the-badge&logo=gamepad&logoColor=black)](https://www.robtopgames.com/)
+[![API](https://img.shields.io/badge/API-Wrapper-00D26A?style=for-the-badge&logo=fastapi&logoColor=white)](/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](/)
+[![GitHub](https://img.shields.io/badge/GitHub-Open_Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/NerexGD/GeometryPy)
+
+<br/>
+
+*A Python wrapper for the Geometry Dash API*
+
+[Installation](#installation) · [Usage](#usage) · [Functions](#functions) · [Example](#example)
+
+---
+
 </div>
 
-<b>/!\ Only works for 2.1 /!\
+<div align="center">
+
+> ⚠️ **WARNING: Only works for Geometry Dash 2.1** ⚠️
+
+</div>
 
 # Installation
 You can install the library here https://github.com/NerexGD/GeometryPy/releases/ but you can also download it by clicking the green button "Clone or Download". Extract GeometryPy from the .zip and add it to your project directory. You're ready to go!
