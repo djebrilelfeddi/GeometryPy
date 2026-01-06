@@ -1,129 +1,93 @@
+#
 <div align="center">
+  <br />
+  <p>
+    <a><img src="https://i.ibb.co/2shXHs5/logo-GEOMETRY-pu.png" width="700" alt="GeometryPy" /></a>
+  </p>
+  <br />
 
-<!-- Logo -->
-<img src="https://iili.io/fOMHAWQ.png" alt="GraphLib Logo" width="900"/>
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Geometry Dash](https://img.shields.io/badge/Geometry_Dash-2.1-FFCC00?style=for-the-badge&logo=gamepad&logoColor=black)](https://www.robtopgames.com/)
+[![API](https://img.shields.io/badge/API-Wrapper-00D26A?style=for-the-badge&logo=fastapi&logoColor=white)](/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](/)
+[![GitHub](https://img.shields.io/badge/GitHub-Open_Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/NerexGD/GeometryPy)
 
 <br/>
 
-[![C++](https://img.shields.io/badge/C++-20-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](https://isocpp.org/)
-[![Header Only](https://img.shields.io/badge/Header--Only-✓-success?style=for-the-badge)](https://en.wikipedia.org/wiki/Header-only)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20|%20Linux%20|%20macOS-lightgrey?style=for-the-badge)](https://github.com/djebrilelfeddi/GraphLib)
-[![Docs](https://img.shields.io/badge/Docs-Doxygen-blue?style=for-the-badge&logo=readthedocs&logoColor=white)](https://www.doxygen.nl/)
+*A Python wrapper for the Geometry Dash API*
+
+[Installation](#installation) · [Usage](#usage) · [Functions](#functions) · [Example](#example)
 
 ---
 
 </div>
 
-<br/>
+<div align="center">
 
-**GraphLib** is a high-performance, header-only C++20 library for managing and manipulating undirected graphs. Designed for efficiency and ease of use, it leverages modern C++ features and standard STL containers, and works with any efficient key type (integers, strings, custom structures).
+> ⚠️ **WARNING: Only works for Geometry Dash 2.1** ⚠️
 
-## Installation
+</div>
 
-Since GraphLib is a header-only library, no compilation is required for the library itself.
+# Installation
+You can install the library here https://github.com/NerexGD/GeometryPy/releases/ but you can also download it by clicking the green button "Clone or Download". Extract GeometryPy from the .zip and add it to your project directory. You're ready to go!
+# Usage
+GeometryPy have a lot of features: Get user stats, Get level info, Get featured levels, and more!
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/djebrilelfeddi/GraphLib.git
-    cd GraphLib
-    ```
-
-2.  **Include in your project:**
-    Simply copy `graphlib.hpp` to your project's include directory.
-
-    ```cpp
-    #include "graphlib.hpp"
-    ```
-    
-## Available Methods
-
-> **Legend**: `n` = vertices, `m` = edges, `d` = degree of vertex, `V` = visited vertices, `E` = visited edges
-
-| Function | Description | Complexity (amortized) |
-|----------|-------------|------------|
-| `addVertex(v)` | **Adds a vertex** to the graph. No effect if it already exists. | O(1) |
-| `addEdge(u, v)` | **Adds an undirected edge** between two vertices. Creates vertices if needed. Self-loops are ignored. | O(1) |
-| `containsVertex(v)` | **Checks if a vertex exists** in the graph. | O(1) |
-| `containsEdge(u, v)` | **Checks if an edge exists between** two vertices. | O(1) |
-| `degree(v)` | **Returns the number of neighbors** of a vertex. | O(1) |
-| `maxDegree()` | **Returns the maximum degree** in the graph. | O(n) |
-| `countVertices()` | **Returns the total number** of vertices. | O(1) |
-| `countEdges()` | **Returns the total number** of edges. | O(n) |
-| `removeEdge(u, v)` | **Removes an edge between** two vertices. | O(1) |
-| `removeVertex(v)` | **Removes a vertex and all** its incident edges. | O(d) |
-| `clear()` | **Removes all vertices and edges** from the graph. | O(n + m) |
-| `vertices()` | **Returns an `unordered_set` of all** vertices. | O(n) |
-| `edges()` | **Returns an `unordered_set` of all edges** as pairs. | O(m) |
-| `neighbors(v)` | **Returns the set of neighbors** of a vertex. | O(1) |
-| `closedNeighbors(v)` | **Returns neighbors of a vertex** including itself. | O(d) |
-| `bfs(v, maxv)` | **Performs BFS from a vertex.** Optional limit on visited vertices. | O(V + E) |
-| `distance(u, v)` | **Returns shortest path distance**, or `std::nullopt` if unreachable. | O(V + E) |
-| `begin()` / `end()` | **Iterators** for range-based loops over vertices. | O(1) |
-
-## Usage Example
-
-```cpp
-#include <iostream>
-#include "graphlib.hpp"
-
-int main() {
-    // Create a graph of integers
-    Graph<int> g;
-
-    // Add edges (vertices are created automatically)
-    g.addEdge(1, 2);
-    g.addEdge(2, 3);
-    g.addEdge(1, 4);
-
-    // Graph structure:
-    //     1 --- 2 --- 3
-    //     |
-    //     4
-
-    std::cout << g.degree(1) << std::endl;          // Output: 2
-    std::cout << g.countVertices() << std::endl;    // Output: 4
-    std::cout << g.countEdges() << std::endl;       // Output: 3
-
-    // BFS Traversal
-    auto path = g.bfs(1);
-    for (int v : path) std::cout << v << " ";       // Output: 1 2 4 3
-    std::cout << std::endl;
-
-    // Shortest path distance
-    if (auto dist = g.distance(1, 3)) {
-        std::cout << *dist << std::endl;            // Output: 2
-    }
-
-    return 0;
-}
+Get started by importing the package to your project
+```Python
+import GeometryPy
+or
+import GeometryPy as GDClient
+or
+import GeometryPy as [insert what you want here]
+#Because i know we're sometimes lazy to write a long word
 ```
 
-## Running Tests
+You can now start to use GeometryPy! Enjoy!
 
-The project comes with a comprehensive test suite (Unit Tests & Boost Tests).
+# Functions
+| Function | Parameters | Result |
+|------|------|------------|
+| GetUserInfo | AccountID or Username | Returns a dict which contains informations about an **User** |
+| GetLevelInfo | Level Name or LevelID, *Creator (optional)* | Returns a dict which contains informations about a **Level**
+| GetSongInfo | SongID | Returns a dict which contains informations about a **Song** |
+| GetPlayersLeaderboard | Players Amount | Returns a list which contains multiples dicts with **top players stats** |
+| GetCreatorsLeaderboard | Players Amount | Returns a list which contains multiples dicts with **top creators stats** |
+| GetFeaturedLevels | Page | Returns a list which contains multiples dicts with **featured levels info** |
+| GetMostDownloadedLevels | Page | Returns a list which contains multiples dicts with **most downloaded levels info** |
+| GetMostLikedLevels | Page | Returns a list which contains multiples dicts with **most liked levels info** |
+| GetRecentLevels | Page | Returns a list which contains multiples dicts with **recents levels info** |
+| GetAwardedLevels | Page | Returns a list which contains multiples dicts with **awarded levels info** |
+| GetMagicLevels | Page | Returns a list which contains multiples dicts with **magics levels info** |
 
-To build and run all tests:
+# Example
+In this example, you can get stats of the user "Nerex", Get infos of the level "Cataclysm" but also get the top 100 creators leaderboard!
+```Python
+import GeometryPy as GDClient
 
-```bash
-make test
+Player = GDClient.GetUserInfo("Nerex") #You can also use an AccountID!
+print(Player) 
+
+""" returns: { 'username': 'Nerex', 
+                       'stars': '1340', 
+                       'usercoins': '130', 
+                       'demons': '40', 
+                       'diamonds': '1919',
+                       'cp': '2',
+                       'youtube': 'UC5JsIMU43qQw9ggxdVpJgRg', 
+                       'twitter': '@Nerex1', 
+                       'twitch': 'NerexGD', 
+                       'accountid': '20207462', 
+                       'userid': '5837301' } 
+"""        
+                       
+print(Player["username"]) # returns "Nerex"
+
+
+Level = GDClient.GetLevelInfo("Cataclysm") #You can also use a Level ID and specify a creator! (GDClient.GetLevelInfo("Cataclysm", "GgBoy")
+print(Level["stars"]) # return 10
+
+
+LeaderboardCreators = GDClient.GetCreatorsLeaderboard(100)
+print(LeaderboardCreators[0]) # returns ViPrIn
 ```
-
-Or individual tests:
-
-```bash
-make test1  # Builds and runs logic for test 1
-```
-
-## Documentation
-
-Detailed documentation can be generated via Doxygen:
-
-```bash
-doxygen Doxyfile
-```
-
-## Author
-
-**EL FEDDI Djebril**
-
-![License](https://img.shields.io/badge/license-MIT-green.svg)
